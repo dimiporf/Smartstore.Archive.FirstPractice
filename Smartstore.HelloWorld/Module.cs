@@ -26,7 +26,7 @@ namespace Smartstore.HelloWorld
 
         public override async Task UninstallAsync()
         {
-            // Deletes all "MyGreatModuleSettings" properties settings from the database.
+            // Deletes all "HelloWorldSettings" properties settings from the database.
             await DeleteSettingsAsync<HelloWorldSettings>();
 
             // Deletes all language resource for the current module 
