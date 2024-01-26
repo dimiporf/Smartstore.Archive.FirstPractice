@@ -83,7 +83,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smartstore.Data.PostgreSql"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smartstore.Data.Sqlite", "src\Smartstore.Data\Smartstore.Data.Sqlite\Smartstore.Data.Sqlite.csproj", "{32683DB7-C20D-4ABD-BE90-569168B2A68F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Smartstore.HelloWorld", "Smartstore.HelloWorld\Smartstore.HelloWorld.csproj", "{B676C040-5C84-4689-AFA5-100A0B420825}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Smartstore.HelloWorld", "Smartstore.HelloWorld\Smartstore.HelloWorld.csproj", "{B676C040-5C84-4689-AFA5-100A0B420825}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

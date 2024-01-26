@@ -19,6 +19,16 @@ namespace Smartstore.HelloWorld
 
             modulesNode.Append(menuItem);
 
+
+            var rssFeedMenuItem = new MenuItem().ToBuilder()
+                .Text("RSS Feed")
+                .ResKey("Plugins.SmartStore.HelloWorld.RssFeedButton")
+                .Icon("rss", "bi") // Use an appropriate RSS icon
+                .Action("Index", "News", new { area = "Admin" }) // Specify the area
+                .AsItem();
+
+            modulesNode.Append(rssFeedMenuItem);
+
             //var refNode = modulesNode.Root.SelectNodeById("settings");
             //menuNode.InsertAfter(refNode);
 

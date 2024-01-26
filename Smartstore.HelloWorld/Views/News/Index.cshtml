@@ -1,0 +1,51 @@
+﻿@model List<NewsItemModel>
+
+
+    <style>
+        /* Ensure all cards have the same height */
+        .card {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Align "Read More" button to the bottom left */
+        .card-body {
+            flex-grow: 1;
+        }
+    </style>
+ 
+    @{
+        Layout = "_Layout";
+    }
+
+    @await Component.InvokeAsync("StoreScope")
+
+    <div class="container mt-4">
+        <h2>News Feed</h2>
+
+        <div id="rssFeedItems" class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        @if (!string.IsNullOrEmpty(item.ImageUrl))
+                        {
+                            <img src="@item.ImageUrl" class="card-img-top" alt="Image Alt Text">
+                        }
+
+                        <div class="card-body">
+                            <h5 class="card-title">@item.Title</h5>
+                            <p class="card-text">@Html.Raw(item.Description)</p>
+                        </div>
+
+                        <div class="card-footer">
+                            <a href="@item.Link" class="btn btn-primary" target="_blank">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+  

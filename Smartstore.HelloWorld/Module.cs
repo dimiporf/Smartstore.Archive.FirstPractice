@@ -10,6 +10,10 @@ namespace Smartstore.HelloWorld
         public RouteInfo GetConfigurationRoute()
             => new("Configure", "HelloWorldAdmin", new { area = "Admin" });
 
+        public RouteInfo GetNewsRoute()
+            => new("News", "HelloWorldAdmin", new { area = "Admin" });
+
+
         public override async Task InstallAsync(ModuleInstallationContext context)
         {
             // Saves the default state of a settings class to the database 
