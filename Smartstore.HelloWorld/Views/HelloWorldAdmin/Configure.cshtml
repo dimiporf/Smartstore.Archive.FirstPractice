@@ -27,3 +27,53 @@
         </div>
     </div>
 </form>
+
+<div id="xmlContentContainer"></div>
+
+<script>
+    $(function () {
+        // Replace the path with the actual path to your XML file
+        var rssFeedPath = "https://smartstore.com/en/news/rss/";
+
+        // Add your XML parsing logic here
+        $.ajax({
+            type: "GET",
+            url: rssFeedPath,
+            dataType: "xml",
+            success: function (xml) {
+                // Parse the XML and build the HTML content
+                var htmlContent = "<div class='row'>";
+
+                $(xml).find('item').each(function () {
+                    var title = $(this).find('title').text();
+                    var link = $(this).find('link').text();
+                    var imgUrl = $(this).find('enclosure').attr('url');
+                    var description = $(this).find('description').text();
+
+                    // Add Bootstrap-styled HTML content for each item
+                    htmlContent += '<div class="col-md-4 mb-4">' +
+                        '<div class="card">' +
+                        '<img src="' + imgUrl + '" class="card-img-top" alt="Image">' +
+                        '<div class="card-body">' +
+                        '<h5 class="card-title">' + title + '</h5>' +
+                        '<p class="card-text">' + description + '</p>' +
+                        '<a href="' + link + '" class="btn btn-primary" target="_blank">Read more</a>' +
+                        '</div>' +
+                        '</div>' +
+                        '</div>';
+                });
+
+                htmlContent += "</div>";
+
+                // Append the generated HTML content to the container element
+                $("#xmlContentContainer").html(htmlContent);
+            },
+            error: function (error) {
+                console.error("Error fetching XML:", error);
+            }
+        });
+        $("form").submit(function (e) {
+            e.preventDefault();
+        });
+    });
+</script>

@@ -5,9 +5,11 @@ using Smartstore.ComponentModel;
 using Smartstore.Core.Security;
 using Smartstore.Web.Controllers;
 using Smartstore.Web.Modelling.Settings;
+using Microsoft.AspNetCore.Cors;
 
 namespace Smartstore.HelloWorld.Controllers
 {
+   
     public class HelloWorldAdminController : AdminController
     {
         [LoadSetting, AuthorizeAdmin]

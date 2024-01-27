@@ -1,6 +1,5 @@
 ﻿@model List<NewsItemModel>
 
-
     <style>
         /* Ensure all cards have the same height */
         .card {
@@ -14,9 +13,9 @@
             flex-grow: 1;
         }
     </style>
- 
+
     @{
-        Layout = "_Layout";
+        Layout = "_ConfigureModule";
     }
 
     @await Component.InvokeAsync("StoreScope")
@@ -24,7 +23,7 @@
     <div class="container mt-4">
         <h2>News Feed</h2>
 
-        <div id="rssFeedItems" class="row">
+        <div class="row">
             @foreach (var item in Model)
             {
                 <div class="col-md-4 mb-4">
@@ -47,5 +46,3 @@
             }
         </div>
     </div>
-
-  

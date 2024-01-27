@@ -4,9 +4,11 @@ using Smartstore.HelloWorld.Settings;
 using Smartstore.ComponentModel;
 using Smartstore.Web.Controllers;
 using Smartstore.Web.Modelling.Settings;
+using Microsoft.AspNetCore.Cors;
 
 namespace Smartstore.HelloWorld.Controllers
 {
+    
     public class HelloWorldController : PublicController
     {
         [LoadSetting]
